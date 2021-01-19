@@ -50,6 +50,10 @@ nav {
   z-index: 1;
 }
 
+.newnav{
+  position: fixed;
+}
+
 nav ul {
   margin: 0;
   padding:0;

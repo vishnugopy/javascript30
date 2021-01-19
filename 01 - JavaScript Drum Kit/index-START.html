@@ -61,26 +61,6 @@
 
   <script>
 
-    // let buttonset = document.querySelector(".keys");
-    // let buttons = buttonset.querySelectorAll(".key");
-    // let audios = document.querySelectorAll("audio[data-key]");
-
-    // // buttons.forEach(function(keys) {
-    // // keys.addEventListener("click",()=>{
-    // //   console.log("im working");
-
-
-    // //   function addRemove(){
-    // //     keys.classList.add('playing');
-    // //   }
-
-    // //   for (let i = 0; i < audios.length; i++) {
-    // //     audios[i].play();
-    // //     addRemove();
-
-    // //   }
-    // //})
-
     document.addEventListener('keydown', function (e) {
 
       let music = document.querySelector(`audio[data-key="${e.keyCode}"]`);
