@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
@@ -57,10 +59,50 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-<script>
+  <script>
 
-</script>
+    // let buttonset = document.querySelector(".keys");
+    // let buttons = buttonset.querySelectorAll(".key");
+    // let audios = document.querySelectorAll("audio[data-key]");
+
+    // // buttons.forEach(function(keys) {
+    // // keys.addEventListener("click",()=>{
+    // //   console.log("im working");
+
+
+    // //   function addRemove(){
+    // //     keys.classList.add('playing');
+    // //   }
+
+    // //   for (let i = 0; i < audios.length; i++) {
+    // //     audios[i].play();
+    // //     addRemove();
+
+    // //   }
+    // //})
+
+    document.addEventListener('keydown', function (e) {
+
+      let music = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      let btn = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      console.log("music-playing.........");
+      music.play();
+      btn.classList.add("playing");
+
+    });
+
+    document.addEventListener('keyup', function (e) {
+      let btn = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      btn.classList.remove("playing");
+
+    });
+
+
+
+
+  </script>
 
 
 </body>
+
 </html>
