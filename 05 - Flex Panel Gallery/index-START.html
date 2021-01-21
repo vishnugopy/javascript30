@@ -34,7 +34,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-evenly;
       background: #6B0F9C;
       box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
       color: white;
@@ -49,6 +49,7 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
+      transition: all 1s ease-in-out;
     }
 
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -69,15 +70,33 @@
       font-family: 'Amatic SC', cursive;
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 2em;
+      
     }
     
     .panel p:nth-child(2) {
       font-size: 4em;
+      
     }
 
     .panel.open {
       font-size: 40px;
+      
     }
+
+    .anim{
+       width:280% ;
+      transition: all 1s ease-in-out;
+      font-size: 2em;
+    }
+
+    .jump{
+      transform: translateY(-350%);
+    }
+
+    .jumpsecond{
+      transform: translateY(350%);
+    }
+
 
   </style>
 
@@ -113,11 +132,21 @@
   <script>
 
   const panels = document.querySelectorAll('.panel');
+  let first = document.querySelectorAll('.panel p:nth-child(1)');
+  let last = document.querySelectorAll('.panel p:nth-child(3)');
 
   panels.forEach(panel => panel.addEventListener('click', () => {
     console.log("HELLO");
-    panel.style.width = "280%";
-    panel.style.justifyContent = "space-around";
+    panel.classList.toggle('anim');
+    
+    
+
+    first.forEach(element => element.classList.toggle('jump'));
+    last.forEach(element => element.classList.toggle('jumpsecond'));
+    
+    
+
+    
   }));
     
    
