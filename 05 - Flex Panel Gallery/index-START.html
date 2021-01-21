@@ -26,9 +26,15 @@
     .panels {
       min-height: 100vh;
       overflow: hidden;
+      display: flex;
+      justify-content: space-between;
     }
 
     .panel {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       background: #6B0F9C;
       box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
       color: white;
@@ -105,6 +111,18 @@
   </div>
 
   <script>
+
+  const panels = document.querySelectorAll('.panel');
+
+  panels.forEach(panel => panel.addEventListener('click', () => {
+    console.log("HELLO");
+    panel.style.width = "280%";
+    panel.style.justifyContent = "space-around";
+  }));
+    
+   
+
+
 
   </script>
 
