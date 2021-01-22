@@ -26,9 +26,15 @@
     .panels {
       min-height: 100vh;
       overflow: hidden;
+      display: flex;
+      justify-content: space-between;
     }
 
     .panel {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-evenly;
       background: #6B0F9C;
       box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
       color: white;
@@ -43,6 +49,7 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
+      
     }
 
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -63,14 +70,33 @@
       font-family: 'Amatic SC', cursive;
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 2em;
-    }
-    
-    .panel p:nth-child(2) {
-      font-size: 4em;
+      
+      
     }
 
-    .panel.open {
-      font-size: 40px;
+    .panel p:nth-child(2) {
+      font-size: 4em;
+      
+    }
+
+  
+    .anim{
+      flex: 3;
+      font-size: 2em;
+    }
+
+    .panel > *:first-child{
+      transform: translateY(-400%);
+    }
+
+    .panel > *:last-child{
+      transform: translateY(400%);
+    }
+
+
+    .transilate > *:first-child,
+    .transilate > *:last-child{
+      transform: translateY(0);
     }
 
   </style>
@@ -105,6 +131,26 @@
   </div>
 
   <script>
+
+  const panels = document.querySelectorAll('.panel');
+
+  panels.forEach(panel => panel.addEventListener('click', () => {
+    panel.classList.toggle('anim');
+  }));
+
+  panels.forEach(panel => panel.addEventListener('transitionend', () =>{
+    if(event.propertyName.includes("flex-grow")){
+      panel.classList.toggle("transilate");
+    }
+  }));
+   
+  
+    
+ 
+    
+   
+
+
 
   </script>
 

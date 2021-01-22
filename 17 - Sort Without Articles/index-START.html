@@ -54,12 +54,13 @@
     for (let i = 0; i < bands.length; i++) {
 
       bloc.appendChild(document.createElement("li"));
-      bloc.lastChild.textContent = bands[i];
+      bloc.lastChild.textContent =  bands[i].replace(/The |A |An /,"");
+
       
     }
 
   </script>
-
+ 
 </body>
 
 </html>
