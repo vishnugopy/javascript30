@@ -15,10 +15,12 @@
       </div>
     </div>
 
+    <div id="hellotime"></div>
+
 
   <style>
     html {
-      background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=5);
+      background-color: blanchedalmond;
       background-size: cover;
       font-family: 'helvetica neue';
       text-align: center;
@@ -62,12 +64,27 @@
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: right;
+      transform: rotate(70deg);
     }
 
   </style>
 
-  <script>
+  
 
+  <script>
+    const timeshower = document.querySelector("#hellotime");
+    const time = new Date();
+    const newtime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+  
+
+    const secondhand = document.querySelector(".hour-hand") ;
+    const mins = 60 ;
+    const hour = 3600 ;
+
+    setInterval(() => {
+     
+    }, 1000);
 
   </script>
 </body>
