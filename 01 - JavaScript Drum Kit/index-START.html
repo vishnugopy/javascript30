@@ -61,7 +61,7 @@
 
   <script>
 
-    document.addEventListener('keydown', function (e) {
+    window.addEventListener('keydown', function (e) {
 
       let music = document.querySelector(`audio[data-key="${e.keyCode}"]`);
       let btn = document.querySelector(`.key[data-key="${e.keyCode}"]`);
