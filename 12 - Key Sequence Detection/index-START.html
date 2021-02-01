@@ -7,6 +7,18 @@
 </head>
 <body>
 <script>
+
+  let code = "tate";
+  let arr = [];
+  window.addEventListener("keydown" , (e) => {
+    arr.push(e.key);
+    arr.splice(code.length - 1, arr.length - code.length);
+    if (arr.join('').includes(code)) {
+    cornify_add();
+  }
+  }
+  )
+
 </script>
 </body>
 </html>
